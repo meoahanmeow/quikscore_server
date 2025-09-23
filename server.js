@@ -13,6 +13,10 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+app.get("/", (req, res) => {
+    res.status(200).json({message: "Server is running"});
+});
+
 app.post("/login", (req, res) => {
     const { username, password } = req.body;
 
