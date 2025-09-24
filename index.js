@@ -8,6 +8,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.status(200).json({success: true, message: "Hello World!"});
+});
+
 app.post("/login", (req, res) => {
   const { username, password } = req.body;
 
